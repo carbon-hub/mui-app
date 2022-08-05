@@ -1,0 +1,47 @@
+import { Button, styled, Typography } from "@mui/material";
+import SettingsIcon from '@mui/icons-material/Settings'
+
+function App() {
+
+  const MyBlueButton = styled(Button)(({theme}) => ({
+    backgroundColor: theme.palette.otherColor.main,
+    color: "#888",
+    margin: 5,
+    "&:hover": {
+      backgroundColor: "lightblue"
+    },
+    "&:disabled": {
+      backgroundColor: "gray",
+      color: "white"
+    }
+  }));
+
+  return (
+    <div>
+      <Button variant="text" color="primary">Text</Button>
+      <Button variant="contained" startIcon={<SettingsIcon />} color="secondary">Contained</Button>
+      <Button variant="outlined" color="otherColor">Outlined</Button>     
+    
+      <Typography variant="h3" component="p">
+        h1. Heading
+      </Typography>;
+      <Button variant="contained" disabled sx={{
+        backgroundColor:"skyblue",
+        color: "#888",
+        margin: 5,
+        "&:hover": {
+          backgroundColor: "lightblue"
+        },
+        "&:disabled": {
+          backgroundColor: "gray",
+          color: "white"
+        }
+      }}>My Unique Button</Button>
+
+      <MyBlueButton>B2</MyBlueButton>
+      <MyBlueButton>B3</MyBlueButton>
+    </div>
+  );
+}
+
+export default App;
